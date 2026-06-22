@@ -1,4 +1,4 @@
-﻿using MathExploration.Converters.Data;
+﻿using MathExploration.Converters;
 using MathExploration.Data.Enums;
 using MathExploration.Data.Models;
 

@@ -1,7 +1,7 @@
 ﻿using MathExploration.Data.Enums;
 using MathExploration.Data.Maps;
 
-namespace MathExploration.Converters.Data {
+namespace MathExploration.Converters {
     internal class DataUnitConverter {
         private static readonly DataConversionMap map = new DataConversionMap();
         public decimal Convert(DataUnit originalUnit, DataUnit desiredUnit, decimal d) {

@@ -1,4 +1,4 @@
-﻿using MathExploration.Converters.Mass;
+﻿using MathExploration.Converters;
 
 namespace MathExploration.Calculations {
     internal class DataMassCalculator {

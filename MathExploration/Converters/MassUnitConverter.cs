@@ -1,6 +1,6 @@
 ﻿using MathExploration.Data.Enums;
 using MathExploration.Data.Maps;
-namespace MathExploration.Converters.Mass {
+namespace MathExploration.Converters {
     internal class MassUnitConverter {
         private static readonly MassConversionMap map = new MassConversionMap();
 
