@@ -4,10 +4,10 @@ namespace MathExploration.Converters.Mass {
     internal class MassUnitConverter {
         private static readonly MassConversionMap map = new MassConversionMap();
 
-        public (decimal, MassEnum) Convert(MassEnum originalUnit, MassEnum desiredUnit, decimal d) {
+        public decimal Convert(MassUnit originalUnit, MassUnit desiredUnit, decimal d) {
             decimal massInGrams = map.GetConversionInGrams(originalUnit) * d;
             decimal conversion = massInGrams / map.GetConversionInGrams(desiredUnit);
-            return (conversion, desiredUnit);
+            return conversion;
         }
     }
 }

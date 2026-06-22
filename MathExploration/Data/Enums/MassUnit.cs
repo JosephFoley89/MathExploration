@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace MathExploration.Data.Enums {
-    internal enum MassEnum {
+    internal enum MassUnit {
         PICOGRAM,
         NANOGRAM,
         MICROGRAM,

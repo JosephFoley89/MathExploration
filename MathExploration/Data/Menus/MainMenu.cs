@@ -1,17 +1,16 @@
-﻿using MathExploration.Converters.Mass;
-using MathExploration.Data.Enums;
-using MathExploration.Data.Models;
-using System.Security.Principal;
+﻿using MathExploration.Data.Models;
 
 namespace MathExploration.Data.Menus {
     internal class MainMenu : MenuModel {
-        private static DataMassMenu dataMassMenu;
-        private static MassConversionMenu massConversionMenu;
+        private static CalculationMenu calculationMenu;
+        private static ConversionMenu conversionMenu;
+        private static ProjectEulerMenu projectEulerMenu;
 
         private string selection = string.Empty;
         private static List<string> menuText = new List<string>() {
-            "1. Calculate the mass of stored data",
-            "2. Convert mass",
+            "1. Calculations",
+            "2. Conversions",
+            "3. Project Euler",
             "0. Exit application"
         };
 
@@ -20,45 +19,21 @@ namespace MathExploration.Data.Menus {
         }
 
         public void ReadSelection() {
-            selection = Menu.ReadInput();
+            selection = Menu.ReadInput(true);
 
             switch (selection) {
                 case "1":
-                    dataMassMenu = new DataMassMenu();
-                    dataMassMenu.CalculateMassOfStoredData();
+                    calculationMenu = new CalculationMenu();
                     break;
                 case "2":
-                    massConversionMenu = new MassConversionMenu();
-                    ConvertMass();
+                    conversionMenu = new ConversionMenu();
                     break;
                 case "3":
-
+                    projectEulerMenu = new ProjectEulerMenu();
                     break;
                 case "0":
                     Environment.Exit(0);
                     break;
-                default:
-                    Menu.SetStage(menuText);
-                    break;
-            }
-        }
-
-        private void ConvertMass() {
-            MassUnitConverter converter = new MassUnitConverter();
-            Console.WriteLine("Please select the current unit of weight you're using.");
-
-            int i = 0;
-
-            foreach (var value in Enum.GetValues(typeof(MassEnum))) {
-                i++;
-                Console.WriteLine($"{i}. {value}");
-            }
-
-            if (Menu.ReturnPrompt()) {
-                Menu.SetStage(menuText);
-                ReadSelection();
-            } else {
-                ConvertMass();
             }
         }
     }

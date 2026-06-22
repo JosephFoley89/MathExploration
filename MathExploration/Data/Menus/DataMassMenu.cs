@@ -1,9 +1,8 @@
-﻿using MathExploration.Calculators.Mass;
+﻿using MathExploration.Calculations;
 using MathExploration.Data.Models;
 
 namespace MathExploration.Data.Menus {
     internal class DataMassMenu : MenuModel {
-        private static MainMenu mainMenu;
         private static List<string> menuText = new List<string>() {
             "Please input the number of bits you would like to calculate the mass for."
         };
@@ -24,7 +23,7 @@ namespace MathExploration.Data.Menus {
             }
 
             if (Menu.ReturnPrompt()) {
-                mainMenu = new MainMenu();
+                MainMenu = new MainMenu();
             } else {
                 CalculateMassOfStoredData();
             }

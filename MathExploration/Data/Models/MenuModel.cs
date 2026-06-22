@@ -6,6 +6,7 @@ namespace MathExploration.Data.Models {
         public ErrorUtil Error;
         public MenuUtil Menu;
         public List<string> MenuText;
+        public MainMenu MainMenu;
 
         public MenuModel(List<string> menuText, string menuTitle) {
             Error = new ErrorUtil();

@@ -1,6 +1,6 @@
 ﻿using MathExploration.Converters.Mass;
 
-namespace MathExploration.Calculators.Mass {
+namespace MathExploration.Calculations {
     internal class DataMassCalculator {
         private MassUnitConverter MassConverter = new MassUnitConverter();
         private const decimal BITMASS = 1e-18M;
